@@ -1,6 +1,44 @@
 let humanScore=0;
 let computerScore=0; 
 
+const humanChoice=getHumanChoice();
+const computerChoice=getComputerChoice();
+    
+playRound(humanChoice, computerChoice);
+
+function playRound(humanChoice, computerChoice){
+    if(humanChoice==='rock'){
+        if(computerChoice==='paper'){
+            console.log(`You Lose! ${computerChoice} beats ${humanChoice}`);
+            computerScore++;
+        }
+        else{
+            console.log(`You Win! ${humanChoice} beats ${computerChoice}`);
+            humanScore++;
+        }
+    }
+    else if(humanChoice==='paper'){
+        if(computerChoice==='scissors'){
+            console.log(`You Lose! ${computerChoice} beats ${humanChoice}`);
+            computerScore++;
+        }
+        else{
+            console.log(`You Win! ${humanChoice} beats ${computerChoice}`);
+            humanScore++;
+        }
+    }
+    else{
+        if(computerChoice==='paper'){
+            console.log(`You Win! ${humanChoice} beats ${computerChoice}`);
+            computerScore++;
+        }
+        else{
+            console.log(`You Lose! ${computerChoice} beats ${humanChoice}`);
+            humanScore++;
+        }
+    }
+}
+
 function getComputerChoice(){
     const randomNumber = (Math.random()*10).toFixed(1);
     if(randomNumber<=3.3){
